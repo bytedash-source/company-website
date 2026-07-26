@@ -93,6 +93,36 @@ export const caseStudies: CaseStudy[] = [
       "TERMFAI — key workflow",
     ],
   },
+  {
+    slug: "exat-linkedbiz",
+    projectNumber: "03",
+    client: "EXAT LinkedBiz",
+    clientLegalName: "Expressway Authority of Thailand (EXAT)",
+    category: "Content management system",
+    focus: "Business content and eCommerce",
+    categories: ["web-platforms", "operational-tools"],
+    cardDescription:
+      "A content management system built for EXAT to manage business content and an eCommerce experience.",
+    overview:
+      "EXAT LinkedBiz is a content management system built for the Expressway Authority of Thailand (EXAT) to manage business content and support an eCommerce experience.",
+    opportunity: PLACEHOLDER_DETAILS,
+    role: PLACEHOLDER_DETAILS,
+    sections: [
+      {
+        heading: "Designing for business content management",
+        body: "LinkedBiz gives EXAT's team a clear, structured way to manage business content, without depending on a developer for every update. The CMS was built around that need, prioritising a straightforward editing experience over unnecessary complexity.",
+      },
+      {
+        heading: "Content and commerce in one platform",
+        body: "LinkedBiz brings business content management and an eCommerce experience together within a single platform, so EXAT can manage what it publishes and what it sells in one place.",
+      },
+    ],
+    visualLabels: [
+      "EXAT LinkedBiz — dashboard view",
+      "EXAT LinkedBiz — content management",
+      "EXAT LinkedBiz — eCommerce experience",
+    ],
+  },
 ];
 
 export const workFilters: { label: string; value: "all" | WorkCategory }[] = [

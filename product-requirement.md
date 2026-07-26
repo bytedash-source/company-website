@@ -158,6 +158,7 @@ Discovery → Design → Development → Testing → Launch & Optimization
 |---|---|---|---|
 | Asset Activator Co., Ltd. | IEA | Responsive web application, Asset management | Screenshot, บทบาท ByteDash, โจทย์, แนวทางแก้, ผลลัพธ์เชิงตัวเลข |
 | Synergy Technology Co., Ltd. | TERMFAI (Available 2025) | Cross-platform mobile application, EV Platform and Shopping | Screenshot, บทบาท ByteDash, โจทย์, แนวทางแก้, ผลลัพธ์เชิงตัวเลข |
+| การทางพิเศษแห่งประเทศไทย (EXAT) | EXAT LinkedBiz | Content management system, Business content and eCommerce | Screenshot, บทบาท ByteDash, โจทย์, แนวทางแก้, ผลลัพธ์เชิงตัวเลข |
 
 **Gap ที่ต้องปิดก่อน build ส่วนนี้ได้จริง:** ตอนนี้มีแค่ชื่อ+คำอธิบาย 1 บรรทัดต่อโปรเจกต์ ยังไม่มี screenshot, ไม่มีรายละเอียด problem/approach/result — ต้องขอจากทีม sales/ลูกค้าก่อน (ดูข้อ 7) — ส่วนนี้ระบุไว้ชัดว่าสำคัญที่สุดต่อความน่าเชื่อถือของเว็บ (evidence ตาม Linear pattern) จึงไม่ควร build แบบข้อมูลไม่ครบ
 

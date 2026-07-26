@@ -12,9 +12,10 @@ type CaseStudyContentProps = {
 };
 
 /**
- * Shared case-study layout — IEA and TERMFAI each pass their own content
- * object in, so the header, opportunity/role placeholders, and per-project
- * sections all render from data instead of being duplicated per route.
+ * Shared case-study layout — each project (IEA, TERMFAI, EXAT LinkedBiz, ...)
+ * passes its own content object in, so the header, opportunity/role
+ * placeholders, and per-project sections all render from data instead of
+ * being duplicated per route.
  */
 export function CaseStudyContent({ project, nextProject }: CaseStudyContentProps) {
   return (

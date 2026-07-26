@@ -18,6 +18,7 @@
 | Work (index) | `/work` | Show selected work; link to case studies | View project |
 | IEA (case study) | `/work/iea` | Detail on the IEA project | Start your own project |
 | TERMFAI (case study) | `/work/termfai` | Detail on the TERMFAI project | Start your own project |
+| EXAT LinkedBiz (case study) | `/work/exat-linkedbiz` | Detail on the EXAT LinkedBiz project | Start your own project |
 | About | `/about` | Company background, principles, vision, mission | Get in touch |
 | Contact | `/contact` | Project enquiry | Send enquiry |
 | Insights (index) | `/insights` | Future content hub, placeholder only | — (optional future CTA) |
@@ -66,9 +67,10 @@ Individual sections use a more specific variant where it reads better (e.g. "Tal
 | Home | BYTE DASH — Digital product studio in Bangkok | BYTE DASH designs and builds mobile apps, web applications, and UX/UI for businesses that need digital products that work well in practice. | `/` |
 | Services | Services — Mobile, web, UX/UI, and consulting \| BYTE DASH | Mobile and web application development, UX/UI design, prototyping, and technology consulting from BYTE DASH, a Bangkok-based product studio. | `/services` |
 | Process | Process — How we build digital products \| BYTE DASH | How BYTE DASH moves projects from discovery through design, development, testing, and launch — a process adapted to each project's scope. | `/process` |
-| Work index | Work — Products designed and built by BYTE DASH | A selection of mobile and web applications designed and developed by BYTE DASH, including IEA and TERMFAI. | `/work` |
+| Work index | Work — Products designed and built by BYTE DASH | A selection of mobile and web applications designed and developed by BYTE DASH, including IEA, TERMFAI, and EXAT LinkedBiz. | `/work` |
 | IEA | IEA — Asset management web application \| BYTE DASH | IEA is a responsive web application built for Asset Activator Co., Ltd. to support asset management. | `/work/iea` |
 | TERMFAI | TERMFAI — EV platform mobile app \| BYTE DASH | TERMFAI is a cross-platform mobile application for Synergy Technology Co., Ltd., combining an EV platform with a shopping experience. Available 2025. | `/work/termfai` |
+| EXAT LinkedBiz | EXAT LinkedBiz — Business content & eCommerce CMS \| BYTE DASH | EXAT LinkedBiz is a content management system built for the Expressway Authority of Thailand (EXAT) to manage business content and support an eCommerce experience. | `/work/exat-linkedbiz` |
 | About | About BYTE DASH — Digital product studio, Bangkok | BYTE DASH is a digital product studio based in Bangkok and Nonthaburi, working across mobile, web, and UX/UI design. | `/about` |
 | Contact | Contact BYTE DASH — Start a project | Get in touch with BYTE DASH to talk about a mobile app, web application, or UX/UI design project. Based in Bangkok and Nonthaburi, Thailand. | `/contact` |
 | Insights | Insights — BYTE DASH | Thinking on product design, UX/UI, and web and mobile development from BYTE DASH. Coming soon. | `/insights` |
@@ -169,6 +171,7 @@ Every stage, from the first concept to the final release, should meet a high, co
 - Intro: A look at recent projects, from asset management platforms to consumer mobile apps.
 - IEA card: Asset Activator Co., Ltd. — A responsive web application built for asset management. → View project
 - TERMFAI card: Synergy Technology Co., Ltd. — A cross-platform mobile app for an EV platform and shopping experience. Available 2025. → View project
+- EXAT LinkedBiz card: Expressway Authority of Thailand (EXAT) — A content management system for business content and an eCommerce experience. → View project
 - CTA: See all work
 
 #### About preview
@@ -289,7 +292,7 @@ Every stage, from the first concept to the final release, should meet a high, co
 - Headline: Products we've designed and built.
 - Intro: A selection of projects across web and mobile, each developed end-to-end or in close partnership with an existing team. This page reflects a selection of our work, not the full list of projects we've completed — more is added as it's ready to share publicly.
 
-**Filter / category labels** (built for future projects, not just the current two): All work · Web applications · Mobile applications · UX/UI design · Asset management · EV & mobility
+**Filter / category labels** (built for future projects, not just the current three): All work · Web applications · Mobile applications · UX/UI design · Asset management · EV & mobility · Content management
 
 **IEA — card copy**
 - Client: Asset Activator Co., Ltd.
@@ -304,6 +307,13 @@ Every stage, from the first concept to the final release, should meet a high, co
 - Focus: EV platform and shopping
 - Status: Available 2025
 - Line: A cross-platform mobile app for an EV platform, combining vehicle features with a shopping experience.
+- CTA: View project
+
+**EXAT LinkedBiz — card copy**
+- Client: Expressway Authority of Thailand (EXAT)
+- Category: Content management system
+- Focus: Business content and eCommerce
+- Line: A content management system built for EXAT to manage business content and an eCommerce experience.
 - CTA: View project
 
 **Empty-state / future-project wording**
@@ -381,12 +391,48 @@ TERMFAI brings together two areas within a single app: an EV platform and a shop
 [Add approved project outcome or client quote here.]
 
 **Next project**
+Next: EXAT LinkedBiz → View project
+Start your own project → Start a project
+
+---
+
+### 4.7 EXAT LinkedBiz — case study
+
+- Project header: EXAT LinkedBiz
+- Client: Expressway Authority of Thailand (EXAT)
+- Category: Content management system
+- Focus: Business content and eCommerce
+
+**Overview**
+EXAT LinkedBiz is a content management system built for the Expressway Authority of Thailand (EXAT) to manage business content and support an eCommerce experience. [Add a one- to two-sentence summary of what the platform does for its users, once approved for publishing.]
+
+**The opportunity**
+[Add a high-level description of the business challenge EXAT LinkedBiz was built to solve.]
+
+**BYTE DASH's role**
+[Add details of BYTE DASH's specific role and responsibilities on this project — for example, full-stack development, UX/UI design, or a defined phase of work.]
+
+**Designing for business content management**
+LinkedBiz gives EXAT's team a clear, structured way to manage business content, without depending on a developer for every update. [Add detail on the primary user group and core workflows, once confirmed for publishing.]
+
+**Content and commerce in one platform**
+LinkedBiz brings business content management and an eCommerce experience together within a single platform. [Add further detail on how these two areas connect for the user, once approved for publishing.]
+
+**Visuals**
+- [Add product screenshot — dashboard view]
+- [Add product screenshot — content management]
+- [Add product screenshot — eCommerce experience]
+
+**Outcomes**
+[Add approved project outcome or client quote here.]
+
+**Next project**
 Next: IEA → View project
 Start your own project → Start a project
 
 ---
 
-### 4.7 About
+### 4.8 About
 
 **Hero**
 - Eyebrow: About
@@ -421,7 +467,7 @@ Get in touch → Talk to BYTE DASH about your project.
 
 ---
 
-### 4.8 Contact
+### 4.9 Contact
 
 - Hero headline: Let's talk about what you're building.
 - Intro: Tell us about your project — what you're trying to build, where you are in the process, and what kind of support you need. We'll reply to let you know next steps.
@@ -464,7 +510,7 @@ No project is too early to talk about — if you're still shaping the idea, we'r
 
 ---
 
-### 4.9 Insights index (future placeholder)
+### 4.10 Insights index (future placeholder)
 
 - Eyebrow: Insights
 - Headline: Thinking on product, design, and technology.
@@ -481,7 +527,7 @@ Product strategy · UX/UI design · Mobile development · Web development · Wor
 
 ---
 
-### 4.10 Privacy policy (placeholder structure only)
+### 4.11 Privacy policy (placeholder structure only)
 
 - Page title: Privacy policy
 - Introduction: This page is a placeholder structure for BYTE DASH's privacy policy. The content below must be reviewed, completed, and formally approved by BYTE DASH — ideally with legal input — before publishing. Nothing on this page should be treated as a final or legally binding policy until that review is complete.
@@ -500,10 +546,10 @@ Product strategy · UX/UI design · Mobile development · Web development · Wor
 ## 5. Content gaps and questions for BYTE DASH
 
 1. **Site structure mismatch.** This content system assumes a multi-page IA (10 separate pages/routes). `product-requirement.md` currently specifies a single-page scroll site with anchor nav. Confirm which structure to build — or whether to launch single-page now and split into full pages later (the PRD already flags `/work/[slug]` as a likely future split).
-2. **Approved project details for IEA and TERMFAI.** No brief, problem statement, or approach detail exists beyond client name, product name, type, and focus area. Every "opportunity," "role," and "approach" block above is a placeholder pending real input.
-3. **Screenshots and product visuals.** Neither case study has any imagery. All visual blocks are placeholders — this is the single biggest blocker to publishing the Work section credibly.
-4. **Client permission to display names and logos.** Confirm Asset Activator Co., Ltd. and Synergy Technology Co., Ltd. have signed off on being named publicly, and whether their logos can be used.
-5. **Measurable outcomes.** No metrics, results, or performance figures were supplied for either project. All "Outcomes" blocks are placeholders — do not fill these with invented numbers.
+2. **Approved project details for IEA, TERMFAI, and EXAT LinkedBiz.** No brief, problem statement, or approach detail exists beyond client name, product name, type, and focus area. Every "opportunity," "role," and "approach" block above is a placeholder pending real input.
+3. **Screenshots and product visuals.** None of the three case studies have any imagery. All visual blocks are placeholders — this is the single biggest blocker to publishing the Work section credibly.
+4. **Client permission to display names and logos.** Confirm Asset Activator Co., Ltd., Synergy Technology Co., Ltd., and the Expressway Authority of Thailand (EXAT) have signed off on being named publicly, and whether their logos can be used — EXAT being a government agency may carry its own approval process.
+5. **Measurable outcomes.** No metrics, results, or performance figures were supplied for any of the three projects. All "Outcomes" blocks are placeholders — do not fill these with invented numbers.
 6. **Testimonials.** None supplied. No quote blocks have been written; add only once a client has approved specific wording.
 7. **Team information.** No team size, named individuals, roles, or headcount were supplied. Copy above deliberately avoids implying any of this — confirm if an "our team" section is wanted at all, and if so, what can be shown.
 8. **Social links.** Not confirmed whether BYTE DASH has active social accounts (LinkedIn, Facebook, IG). None are referenced in this content system; add to footer/contact once confirmed.

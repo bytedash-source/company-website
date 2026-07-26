@@ -8,7 +8,7 @@ import { WorkIndexGrid } from "@/components/sections/work-index-grid";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "A selection of mobile and web applications designed and developed by BYTE DASH, including IEA and TERMFAI.",
+    "A selection of mobile and web applications designed and developed by BYTE DASH, including IEA, TERMFAI, and EXAT LinkedBiz.",
   openGraph: {
     title: "Work by BYTE DASH",
     description:
