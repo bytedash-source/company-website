@@ -40,6 +40,10 @@ There is no test runner configured in this repo.
 - `src/content/` holds typed content modules (e.g. `services.ts`, `work.ts`, `site.ts`) — page components import structured data from here rather than hardcoding copy inline, matching the PRD's static-content-in-code approach.
 - `src/hooks/` — shared hooks (currently just `use-in-view.ts`).
 
+## Component development
+
+Before creating a new reusable component, or working on a specific kind of component (forms, inputs, maps, etc.), read [`docs/COMPONENT.md`](docs/COMPONENT.md) first — it indexes any component-specific conventions under `docs/components/` and must be followed when a relevant guide exists.
+
 ## Development workflow
 
 See [`docs/WORKFLOW.md`](docs/WORKFLOW.md) for commit message conventions, branching, and rules Claude must follow (ask before committing, recommend commit points, maintain `docs/changelogs/`). Follow it for every change.
