@@ -26,6 +26,7 @@ There is no test runner configured in this repo.
 - **Framer Motion** is the animation library going forward, for new components/interactions. It is not yet installed — add it (`npm install framer-motion`) when the first animation that needs it is built.
   - The existing reveal-on-scroll effect (`src/hooks/use-in-view.ts` + `src/components/ui/reveal.tsx` + the `[data-reveal]` CSS in `globals.css`) is a hand-rolled `IntersectionObserver` implementation predating this decision. Leave it as-is — don't migrate it to Framer Motion unless asked to.
   - Respect `prefers-reduced-motion` in any new animation, matching the pattern already in `globals.css`.
+- **SVGR** (`@svgr/webpack`) is configured (`next.config.ts` + `src/types/svg.d.ts`) so `.svg` files import as React components. See [`docs/components/svg.md`](docs/components/svg.md) for when to use that vs. hand-written inline SVG JSX.
 
 ## Architecture
 
