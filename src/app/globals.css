@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Palette — see product-requirement.md §Visual direction */
+  --color-graphite: #0b0d10;
+  --color-graphite-elevated: #12151b;
+  --color-ivory: #eee9df;
+  --color-ink: #0b0d10;
+  --color-accent: #2d68ff;
+
+  /* Type — Latin/UI first so Latin glyphs render in Geist; Thai glyphs
+     fall through to Noto Sans Thai automatically (per-character fallback). */
+  --font-sans: var(--font-sans), var(--font-thai), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-padding-top: 5.5rem; /* offsets sticky header height for #anchor jumps */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+* {
+  border-color: currentColor;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ivory);
+}
+
+/* Consistent, visible focus ring regardless of surface color */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reveal-on-scroll primitive (see src/components/ui/reveal.tsx) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Accessible accordion collapse without JS height measurement */
+[data-accordion-panel] {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+[data-accordion-panel] > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+[data-accordion-panel="open"] {
+  grid-template-rows: 1fr;
+}
+
+@media (min-width: 768px) {
+  /* Desktop: services index is always expanded, accordion button is hidden */
+  [data-accordion-panel] {
+    grid-template-rows: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-accordion-panel] {
+    transition: none;
+  }
+}
+
+/* Subtle grain texture for editorial photo placeholders (SVG noise, no assets) */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }

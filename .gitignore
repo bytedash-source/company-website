@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# reference asset kept locally only (40MB, not needed by the app)
+/Company Profile Presentation.pdf
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
