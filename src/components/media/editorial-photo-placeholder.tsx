@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { MicroLabel } from "@/components/ui/micro-label";
 
-export type EditorialAspect = "portrait" | "landscape" | "panoramic" | "square";
+export type EditorialAspectRatio = "portrait" | "landscape" | "panoramic" | "square";
 export type EditorialTone = "graphite" | "ivory";
 
-const ASPECT_CLASS: Record<EditorialAspect, string> = {
+const ASPECT_CLASS: Record<EditorialAspectRatio, string> = {
   portrait: "aspect-[3/4]",
   landscape: "aspect-[4/3]",
   panoramic: "aspect-[21/9]",
@@ -12,41 +12,42 @@ const ASPECT_CLASS: Record<EditorialAspect, string> = {
 };
 
 type EditorialPhotoPlaceholderProps = {
-  aspect?: EditorialAspect;
-  tone?: EditorialTone;
-  /** object-position, used once a real `src` is supplied */
+  aspectRatio?: EditorialAspectRatio;
+  variant?: EditorialTone;
+  /** object-position, used once a real `imageSrc` is supplied */
   cropPosition?: string;
   label?: string;
-  src?: string;
+  imageSrc?: string;
   alt?: string;
   className?: string;
 };
 
 /**
- * Art-directed stand-in for editorial photography. Pass `src`/`alt` later to
- * swap in the real image — layout, aspect and crop are already wired up.
+ * Art-directed stand-in for editorial photography. Pass `imageSrc`/`alt` later
+ * to swap in the real image — layout, aspect ratio and crop are already
+ * wired up, so nothing else needs to change.
  */
 export function EditorialPhotoPlaceholder({
-  aspect = "landscape",
-  tone = "graphite",
+  aspectRatio = "landscape",
+  variant = "graphite",
   cropPosition = "center",
   label = "PROJECT VISUAL / COMING SOON",
-  src,
+  imageSrc,
   alt = "",
   className = "",
 }: EditorialPhotoPlaceholderProps) {
   const toneClass =
-    tone === "ivory"
+    variant === "ivory"
       ? "bg-ivory text-ink border-ink/15"
       : "bg-graphite-elevated text-ivory border-ivory/15";
 
   return (
     <figure
-      className={`relative overflow-hidden border ${ASPECT_CLASS[aspect]} ${toneClass} ${className}`}
+      className={`relative overflow-hidden border ${ASPECT_CLASS[aspectRatio]} ${toneClass} ${className}`}
     >
-      {src ? (
+      {imageSrc ? (
         <Image
-          src={src}
+          src={imageSrc}
           alt={alt}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"

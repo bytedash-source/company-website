@@ -1,27 +1,104 @@
+export type WorkCategory =
+  | "web-platforms"
+  | "mobile-products"
+  | "ux-ui-systems"
+  | "operational-tools";
+
+export type CaseStudySection = {
+  heading: string;
+  body: string;
+};
+
 export type CaseStudy = {
   slug: string;
   projectNumber: string;
   client: string;
+  clientLegalName: string;
   category: string;
-  description: string;
+  focus: string;
+  categories: WorkCategory[];
   /** Non-standard status worth surfacing on the card, e.g. an upcoming launch date. */
   note?: string;
+  cardDescription: string;
+  overview: string;
+  opportunity: string;
+  role: string;
+  sections: CaseStudySection[];
+  visualLabels: string[];
 };
+
+export const PLACEHOLDER_DETAILS = "Approved project details to be added.";
+export const PLACEHOLDER_OUTCOME = "Outcome details available on request.";
+export const PLACEHOLDER_VISUAL = "Project visual coming soon";
 
 export const caseStudies: CaseStudy[] = [
   {
     slug: "iea",
     projectNumber: "01",
     client: "IEA",
-    category: "Responsive Web Application",
-    description: "Asset management",
+    clientLegalName: "Asset Activator Co., Ltd.",
+    category: "Responsive web application",
+    focus: "Asset management",
+    categories: ["web-platforms", "operational-tools"],
+    cardDescription:
+      "A responsive web platform built to help manage assets more clearly.",
+    overview:
+      "IEA is a responsive web application built for Asset Activator Co., Ltd. to support asset management.",
+    opportunity: PLACEHOLDER_DETAILS,
+    role: PLACEHOLDER_DETAILS,
+    sections: [
+      {
+        heading: "Designing for asset management",
+        body: "Asset management platforms need to make it easy to see what exists, where it is, and what state it's in, without asking people to dig through spreadsheets or disconnected records. IEA was built around that need, prioritising clear structure over decorative complexity.",
+      },
+      {
+        heading: "Responsive platform experience",
+        body: "As a responsive web application, IEA is designed to work across desktop and mobile browsers within a single platform, so the people using it aren't limited to one device or screen size.",
+      },
+    ],
+    visualLabels: [
+      "IEA — dashboard view",
+      "IEA — key workflow",
+      "IEA — responsive layout",
+    ],
   },
   {
     slug: "termfai",
     projectNumber: "02",
     client: "TERMFAI",
-    category: "Cross-platform Mobile Application",
-    description: "EV Platform and Shopping",
+    clientLegalName: "Synergy Technology Co., Ltd.",
+    category: "Cross-platform mobile application",
+    focus: "EV platform and shopping",
+    categories: ["mobile-products"],
     note: "Available 2025",
+    cardDescription:
+      "A cross-platform mobile app for an EV platform, combining vehicle features with a shopping experience.",
+    overview:
+      "TERMFAI is a cross-platform mobile application developed for Synergy Technology Co., Ltd., combining an EV (electric vehicle) platform with a shopping experience. TERMFAI is available in 2025.",
+    opportunity: PLACEHOLDER_DETAILS,
+    role: PLACEHOLDER_DETAILS,
+    sections: [
+      {
+        heading: "Mobile product experience",
+        body: "TERMFAI is built as a cross-platform mobile application, designed to run on iOS and Android from a single product experience.",
+      },
+      {
+        heading: "EV platform and shopping context",
+        body: "TERMFAI brings together two areas within a single app: an EV platform and a shopping experience, giving users a single place to manage both.",
+      },
+    ],
+    visualLabels: [
+      "TERMFAI — EV platform view",
+      "TERMFAI — shopping experience",
+      "TERMFAI — key workflow",
+    ],
   },
+];
+
+export const workFilters: { label: string; value: "all" | WorkCategory }[] = [
+  { label: "All work", value: "all" },
+  { label: "Web platforms", value: "web-platforms" },
+  { label: "Mobile products", value: "mobile-products" },
+  { label: "UX/UI systems", value: "ux-ui-systems" },
+  { label: "Operational tools", value: "operational-tools" },
 ];

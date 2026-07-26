@@ -6,27 +6,35 @@ export type CaseStudyVariant = "desktop" | "mobile" | "full";
 type CaseStudyVisualProps = {
   variant?: CaseStudyVariant;
   label?: string;
-  src?: string;
+  imageSrc?: string;
   alt?: string;
+  cropPosition?: string;
   className?: string;
 };
 
 /**
  * Stand-in for a real product/website screenshot. `variant` controls the
- * device framing; pass `src`/`alt` later to drop in the real capture without
- * touching the surrounding case-study layout.
+ * device framing; pass `imageSrc`/`alt` later to drop in the real capture
+ * without touching the surrounding case-study layout.
  */
 export function CaseStudyVisual({
   variant = "full",
-  label = "CASE STUDY VISUAL — COMING SOON",
-  src,
+  label = "PROJECT VISUAL COMING SOON",
+  imageSrc,
   alt = "",
+  cropPosition = "center",
   className = "",
 }: CaseStudyVisualProps) {
   const frameFill = (
     <div className="relative flex h-full w-full items-center justify-center bg-graphite-elevated">
-      {src ? (
-        <Image src={src} alt={alt} fill className="object-cover" />
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={alt}
+          fill
+          style={{ objectPosition: cropPosition }}
+          className="object-cover"
+        />
       ) : (
         <>
           <div className="grain-overlay absolute inset-0" aria-hidden="true" />

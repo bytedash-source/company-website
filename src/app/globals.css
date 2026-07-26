@@ -8,10 +8,8 @@
   --color-ink: #0b0d10;
   --color-accent: #2d68ff;
 
-  /* Type — Latin/UI first so Latin glyphs render in Geist; Thai glyphs
-     fall through to Noto Sans Thai automatically (per-character fallback). */
-  --font-sans: var(--font-sans), var(--font-thai), ui-sans-serif, system-ui,
-    sans-serif;
+  /* Type — Google Sans covers Latin + Thai in one family (see layout.tsx). */
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 

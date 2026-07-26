@@ -1,48 +1,32 @@
 import { Container } from "@/components/ui/container";
+import { SectionLabel } from "@/components/ui/section-label";
 import { CtaLink } from "@/components/ui/cta-link";
-import { MicroLabel } from "@/components/ui/micro-label";
 import { Reveal } from "@/components/ui/reveal";
-import { CaseStudyVisual } from "@/components/media/case-study-visual";
+import { ProjectCard } from "@/components/ui/project-card";
 import { caseStudies } from "@/content/work";
 
 export function SelectedWorkSection() {
   return (
-    <section id="work" data-surface="dark" className="bg-graphite py-24 text-ivory sm:py-32">
+    <section data-surface="dark" className="bg-graphite py-24 text-ivory sm:py-32">
       <Container>
-        <h2>
-          <MicroLabel className="text-ivory/50">Selected work</MicroLabel>
+        <SectionLabel>Selected work</SectionLabel>
+        <h2 className="mt-6 max-w-xl text-4xl leading-[1.1] font-medium sm:text-5xl">
+          Products built from real questions.
         </h2>
 
-        <div className="mt-8 border-t border-ivory/15">
+        <div className="mt-12 border-t border-ivory/15">
           {caseStudies.map((project, i) => (
             <Reveal key={project.slug} delayMs={i * 80}>
-              <article className="grid gap-8 border-b border-ivory/15 py-14 sm:py-16 lg:grid-cols-2 lg:items-center lg:gap-16">
-                <CaseStudyVisual variant="desktop" />
-
-                <div>
-                  <div className="flex items-baseline gap-4">
-                    <MicroLabel className="text-accent">
-                      {project.projectNumber}
-                    </MicroLabel>
-                    {project.note ? (
-                      <MicroLabel className="text-ivory/45">{project.note}</MicroLabel>
-                    ) : null}
-                  </div>
-                  <h3 className="mt-3 text-3xl font-medium sm:text-4xl">
-                    {project.client}
-                  </h3>
-                  <MicroLabel className="mt-3 block text-ivory/50">
-                    {project.category}
-                  </MicroLabel>
-                  <p className="mt-4 max-w-md text-ivory/70">{project.description}</p>
-                  <CtaLink href={`/work/${project.slug}`} className="mt-8">
-                    View case study
-                  </CtaLink>
-                </div>
-              </article>
+              <div className="border-b border-ivory/15 py-14 sm:py-16">
+                <ProjectCard project={project} variant="row" />
+              </div>
             </Reveal>
           ))}
         </div>
+
+        <CtaLink href="/work" className="mt-10">
+          View all work
+        </CtaLink>
       </Container>
     </section>
   );

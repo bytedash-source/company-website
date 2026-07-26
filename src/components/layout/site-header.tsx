@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { CtaLink } from "@/components/ui/cta-link";
-import { navItems, siteInfo } from "@/content/site";
+import { navItems, primaryCta, siteInfo } from "@/content/site";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -85,8 +85,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden md:block">
-          <CtaLink href="#contact" variant="framed">
-            เริ่มต้นโปรเจกต์
+          <CtaLink href={primaryCta.href} variant="framed">
+            {primaryCta.label}
           </CtaLink>
         </div>
 
@@ -132,8 +132,8 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <CtaLink href="#contact" variant="framed" className="w-fit">
-            เริ่มต้นโปรเจกต์
+          <CtaLink href={primaryCta.href} variant="framed" className="w-fit">
+            {primaryCta.label}
           </CtaLink>
         </div>
       ) : null}

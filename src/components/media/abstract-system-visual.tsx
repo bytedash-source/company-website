@@ -1,12 +1,24 @@
+export type AbstractSystemVisualVariant = "network" | "grid";
+
 type AbstractSystemVisualProps = {
+  /** Caption rendered in the blueprint corner, e.g. "SYS.01 — PRODUCT ARCHITECTURE". */
+  label?: string;
+  /** Reserved for future compositional variants; only "network" is drawn today. */
+  variant?: AbstractSystemVisualVariant;
   className?: string;
 };
 
 /**
  * Blueprint-style system diagram built entirely from SVG/CSS — grid, translucent
- * panels, node/connection lines and a soft cobalt glow. No raster assets.
+ * panels, node/connection lines and a soft cobalt glow. No raster assets. This is
+ * a permanent illustrative element (not a stand-in for a photograph), so it takes
+ * a `label`/`variant` rather than an `imageSrc` — there's no real-world asset to
+ * eventually swap in.
  */
-export function AbstractSystemVisual({ className = "" }: AbstractSystemVisualProps) {
+export function AbstractSystemVisual({
+  label = "SYS.01 — PRODUCT ARCHITECTURE",
+  className = "",
+}: AbstractSystemVisualProps) {
   return (
     <div
       className={`relative aspect-square w-full ${className}`}
@@ -112,7 +124,7 @@ export function AbstractSystemVisual({ className = "" }: AbstractSystemVisualPro
           letterSpacing="2"
           style={{ fontFamily: "var(--font-mono)" }}
         >
-          SYS.01 — PRODUCT ARCHITECTURE
+          {label}
         </text>
       </svg>
     </div>

@@ -237,16 +237,15 @@ Mapping เข้ากับ dark mode ที่ scaffold มีอยู่แ
 
 | บทบาท | ฟอนต์ | ใช้กับ |
 |---|---|---|
-| ภาษาไทย | Google Sans Thai | เนื้อหาไทยทั้งหมด (headline/body/UI) |
-| Headline / UI ภาษาอังกฤษ | Google Sans (fallback: Geist) | Hero headline, section title, ปุ่ม, nav |
-| Label / รายละเอียดเชิงเทคนิค | Google Sans Mono (fallback: Geist Mono) | tag, timestamp, code-like label, technical spec ในหน้า Selected work |
+| ภาษาไทย | Google Sans | เนื้อหาไทยทั้งหมด (headline/body/UI) — ใช้ตัวเดียวกับฝั่งอังกฤษ เพราะ subset `thai` มาพร้อมในฟอนต์เดียวกัน |
+| Headline / UI ภาษาอังกฤษ | Google Sans | Hero headline, section title, ปุ่ม, nav |
+| Label / รายละเอียดเชิงเทคนิค | Google Sans Code | tag, timestamp, code-like label, technical spec ในหน้า Selected work |
 
 เหตุผล: ให้ผลลัพธ์ modern, approachable, รู้สึกเป็น tech product มากกว่า serif เดิม พร้อมรองรับไทย–อังกฤษในหน้าเดียวกันได้กลมกลืน (ตรงกับ nav/copy ที่ผสมสองภาษาอยู่แล้วในข้อ 2.1/3)
 
-**⚠️ ความเสี่ยงด้าน implementation ที่ต้องเช็คก่อนใช้จริง:** "Google Sans" และ "Google Sans Thai" เป็นฟอนต์ที่ Google ใช้ในผลิตภัณฑ์ของตัวเอง (Workspace/Material) **ไม่ได้อยู่ในแคตตาล็อกสาธารณะของ Google Fonts (fonts.google.com)** ต่างจาก Geist/Geist Mono ที่ scaffold ใช้อยู่แล้วผ่าน `next/font/google` ได้ตรงๆ — ก่อน implement ต้องตรวจสอบว่า:
-1. มีไฟล์ฟอนต์/license ใช้งานจริงหรือไม่ (เช่นผ่าน Google Workspace หรือ third-party license) — ถ้าไม่มี ใช้ fallback **Geist / Geist Mono** ตามที่ระบุไว้คู่กัน (มีอยู่แล้วใน scaffold ปัจจุบัน)
-2. Geist ไม่มี Thai glyph รองรับ — ถ้าใช้ fallback ฝั่งไทยต้องหาฟอนต์ไทยแยกที่จับคู่กับ Geist ได้กลมกลืน (เช่น IBM Plex Sans Thai, Noto Sans Thai) ไม่ใช่แค่ fallback ของฝั่งอังกฤษอย่างเดียว
-- เพิ่มเป็น open question ข้อ 12 (ดูข้อ 7)
+**อัปเดต implementation (2026-07-26):** "Google Sans" ถูกเผยแพร่บน Google Fonts สาธารณะแล้ว (fonts.google.com/specimen/Google+Sans) และมีอยู่ในแคตตาล็อกของ `next/font/google` ใน Next.js เวอร์ชันที่ใช้อยู่ — import ได้ตรงๆ ผ่าน `Google_Sans` โดยไม่ต้องพึ่ง Geist เป็น fallback อีกต่อไป ฟอนต์นี้มี subset `thai` ในตัวเอง จึงไม่ต้องหาฟอนต์ไทยแยกมาจับคู่ (ไม่มี "Google Sans Thai" เป็นฟอนต์แยกต่างหากบน Google Fonts — subset ไทยรวมอยู่ใน "Google Sans" ตัวเดียว) ส่วน mono/technical label ใช้ "Google Sans Code" (weights 300–800 + variable) ซึ่งเป็นตัวที่ใกล้เคียง "Google Sans Mono" ที่สุดที่เผยแพร่จริง ("Google Sans Mono" เองยังไม่มีบน Google Fonts) — implement แล้วใน [layout.tsx](./src/app/layout.tsx)/[globals.css](./src/app/globals.css)
+
+- ปิด open question ข้อ 12 แล้ว (ดูข้อ 7)
 
 ### 5.4 ภาพและองค์ประกอบภาพ (Imagery)
 
@@ -302,7 +301,7 @@ Mapping เข้ากับ dark mode ที่ scaffold มีอยู่แ
 | 9 | **สำคัญ — บล็อกการ build ส่วน Selected work:** screenshot จริงของ IEA/TERMFAI, บทบาท ByteDash ในแต่ละโปรเจกต์, โจทย์/แนวทางแก้/ผลลัพธ์เชิงตัวเลข — ยังไม่มีข้อมูลเลย ต้องขอจากทีม sales/ลูกค้า | เปิดอยู่ |
 | 10 | มีช่องทาง social จริงหรือไม่ (LinkedIn/Facebook/IG) สำหรับใส่ใน footer/contact | เปิดอยู่ |
 | 11 | CTA "Let's build together" (header) vs "Start a project" — และ "Explore our work" vs "Talk to us" (hero) เลือกอันไหนเป็นหลัก หรือใช้คู่กันตามตำแหน่ง | เปิดอยู่ — ระหว่างนี้ draft ไว้ทั้งคู่ตามที่ได้รับมา |
-| 12 | **Google Sans / Google Sans Thai มี license ใช้งานจริงหรือไม่** (ไม่อยู่ใน Google Fonts สาธารณะ ต่างจาก Geist ที่ scaffold ใช้อยู่แล้ว) ถ้าไม่มี ต้อง fallback เป็น Geist/Geist Mono + หาฟอนต์ไทยคู่ที่เหมาะสม (ดูข้อ 5.3) | เปิดอยู่ — บล็อกการ implement font stack จริง |
+| 12 | ~~Google Sans / Google Sans Thai มี license ใช้งานจริงหรือไม่~~ | **Resolved (2026-07-26):** "Google Sans" เผยแพร่บน Google Fonts สาธารณะแล้ว พร้อม subset ไทยในตัว ไม่ต้อง fallback เป็น Geist อีกต่อไป — implement แล้วผ่าน `next/font/google` (ดูข้อ 5.3) |
 
 ---
 
