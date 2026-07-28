@@ -4,11 +4,18 @@ import { MicroLabel } from "@/components/ui/micro-label";
 export type EditorialAspectRatio = "portrait" | "landscape" | "panoramic" | "square";
 export type EditorialTone = "graphite" | "ivory";
 
-const ASPECT_CLASS: Record<EditorialAspectRatio, string> = {
-  portrait: "aspect-[3/4]",
-  landscape: "aspect-[4/3]",
-  panoramic: "aspect-[21/9]",
-  square: "aspect-square",
+// padding-top percentage (height/width), not the `aspect-ratio` CSS property:
+// this figure's only in-flow content is absolutely-positioned, so it has no
+// intrinsic size of its own. Inside an `align-items: center` grid cell (see
+// SplitHero), that starves `aspect-ratio`'s auto-height resolution of
+// anything to anchor to and the box collapses to ~0. A padding-top box
+// derives height from the (always-definite) parent width instead, sidestepping
+// the circular dependency entirely.
+const ASPECT_PADDING: Record<EditorialAspectRatio, string> = {
+  portrait: "pt-[133.333%]", // 4/3
+  landscape: "pt-[75%]", // 3/4
+  panoramic: "pt-[42.857%]", // 9/21
+  square: "pt-[100%]", // 1/1
 };
 
 type EditorialPhotoPlaceholderProps = {
@@ -43,7 +50,7 @@ export function EditorialPhotoPlaceholder({
 
   return (
     <figure
-      className={`relative overflow-hidden border ${ASPECT_CLASS[aspectRatio]} ${toneClass} ${className}`}
+      className={`relative h-0 w-full overflow-hidden border ${ASPECT_PADDING[aspectRatio]} ${toneClass} ${className}`}
     >
       {imageSrc ? (
         <Image

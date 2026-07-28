@@ -45,6 +45,8 @@ export function CaseStudyContent({ project, nextProject }: CaseStudyContentProps
           <CaseStudyVisual
             variant="full"
             label={project.visualLabels[0]}
+            imageSrc={project.imageSrc}
+            alt={project.imageSrc ? `${project.client} dashboard` : ""}
             className="mt-16"
           />
         </Container>

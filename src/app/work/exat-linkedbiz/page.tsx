@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const project = caseStudies.find((p) => p.slug === "exat-linkedbiz")!;
-const nextProject = caseStudies.find((p) => p.slug === "iea")!;
+const nextProject = caseStudies.find((p) => p.slug === "u-terrace")!;
 
 export default function ExatLinkedbizCaseStudyPage() {
   return <CaseStudyContent project={project} nextProject={nextProject} />;

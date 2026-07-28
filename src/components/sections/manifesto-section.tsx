@@ -27,13 +27,23 @@ export function ManifestoSection() {
 
           <div className="grid grid-cols-2 gap-4 lg:col-span-6 lg:mt-16 lg:gap-6">
             <Reveal delayMs={100} className="col-span-2 sm:col-span-1">
-              <EditorialPhotoPlaceholder aspectRatio="portrait" variant="graphite" />
+              <EditorialPhotoPlaceholder
+                aspectRatio="portrait"
+                variant="graphite"
+                imageSrc="/images/editorial/manifesto-01.png"
+                alt="A designer working intently on a laptop, lit by the screen"
+              />
             </Reveal>
             <Reveal
               delayMs={200}
               className="col-span-2 mt-8 sm:col-span-1 sm:mt-16"
             >
-              <EditorialPhotoPlaceholder aspectRatio="square" variant="graphite" />
+              <EditorialPhotoPlaceholder
+                aspectRatio="square"
+                variant="graphite"
+                imageSrc="/images/editorial/manifesto-02.png"
+                alt="Overhead view of a designer's hands sketching wireframes on paper"
+              />
             </Reveal>
           </div>
         </div>

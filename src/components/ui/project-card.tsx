@@ -37,7 +37,11 @@ export function ProjectCard({ project, variant = "row", className = "" }: Projec
   if (variant === "grid") {
     return (
       <article className={className}>
-        <CaseStudyVisual variant="desktop" />
+        <CaseStudyVisual
+      variant="desktop"
+      imageSrc={project.imageSrc}
+      alt={project.imageSrc ? `${project.client} dashboard` : ""}
+    />
         <div className="mt-6">{meta}</div>
       </article>
     );
@@ -47,7 +51,11 @@ export function ProjectCard({ project, variant = "row", className = "" }: Projec
     <article
       className={`grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16 ${className}`}
     >
-      <CaseStudyVisual variant="desktop" />
+      <CaseStudyVisual
+      variant="desktop"
+      imageSrc={project.imageSrc}
+      alt={project.imageSrc ? `${project.client} dashboard` : ""}
+    />
       <div>{meta}</div>
     </article>
   );

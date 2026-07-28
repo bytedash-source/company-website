@@ -69,7 +69,11 @@ export function SplitHero({
 
           {visual ? (
             <div className="lg:col-span-5">
-              <div className="max-w-md justify-self-center lg:max-w-none lg:justify-self-end">
+              {/* `justify-self-*` here (instead of `mx-auto`) used to trigger
+                  Chromium's block-level self-alignment behavior, which forces
+                  shrink-to-fit sizing — collapsing any visual whose content is
+                  entirely `position: absolute` (no in-flow box to measure). */}
+              <div className="mx-auto max-w-md lg:mx-0 lg:max-w-none">
                 {visual}
               </div>
             </div>

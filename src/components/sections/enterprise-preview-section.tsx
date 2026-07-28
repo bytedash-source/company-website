@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/container";
 import { SectionLabel } from "@/components/ui/section-label";
 import { CtaLink } from "@/components/ui/cta-link";
 import { Reveal } from "@/components/ui/reveal";
-import { AbstractSystemVisual } from "@/components/media/abstract-system-visual";
+import { EditorialPhotoPlaceholder } from "@/components/media/editorial-photo-placeholder";
 
 export function EnterprisePreviewSection() {
   return (
@@ -26,9 +26,16 @@ export function EnterprisePreviewSection() {
           </Reveal>
 
           <div className="lg:col-span-5">
-            <AbstractSystemVisual
-              label="SYS.02 — OPERATIONAL PLATFORM"
-              className="max-w-md justify-self-center opacity-90 lg:max-w-none lg:justify-self-end"
+            {/* `mx-auto`/`lg:mx-0` here (not `justify-self-*`) — see SplitHero
+                for why: justify-self on a plain block box forces shrink-to-fit
+                sizing in Chromium, which collapses a box whose only content is
+                `position: absolute` (as EditorialPhotoPlaceholder's is). */}
+            <EditorialPhotoPlaceholder
+              aspectRatio="square"
+              variant="graphite"
+              imageSrc="/images/editorial/enterprise-platforms-system.png"
+              alt="Blueprint-style diagram of a layered operational platform"
+              className="mx-auto max-w-md opacity-90 lg:mx-0 lg:max-w-none"
             />
           </div>
         </div>

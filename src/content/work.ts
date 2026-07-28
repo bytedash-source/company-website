@@ -25,6 +25,9 @@ export type CaseStudy = {
   role: string;
   sections: CaseStudySection[];
   visualLabels: string[];
+  /** Real screenshot, used for the card preview and case-study hero — only
+   * set once a review-ready capture exists. Falls back to the placeholder. */
+  imageSrc?: string;
 };
 
 export const PLACEHOLDER_DETAILS = "Approved project details to be added.";
@@ -122,6 +125,68 @@ export const caseStudies: CaseStudy[] = [
       "EXAT LinkedBiz — content management",
       "EXAT LinkedBiz — eCommerce experience",
     ],
+  },
+  {
+    slug: "u-terrace",
+    projectNumber: "04",
+    client: "U Terrace",
+    clientLegalName: "U Terrace",
+    category: "Web dashboard",
+    focus: "Building energy monitoring",
+    categories: ["web-platforms", "operational-tools"],
+    cardDescription:
+      "A web dashboard built to monitor and manage building energy performance in real time.",
+    overview:
+      "U Terrace is a web dashboard built to help monitor building energy performance, from floor-level consumption to building-wide trends.",
+    opportunity: PLACEHOLDER_DETAILS,
+    role: PLACEHOLDER_DETAILS,
+    sections: [
+      {
+        heading: "Monitoring energy at the floor level",
+        body: "U Terrace lets facility teams see energy consumption broken down by floor and zone, making it easier to spot where usage is highest and act on it directly.",
+      },
+      {
+        heading: "Building-wide performance at a glance",
+        body: "Alongside floor-level detail, the dashboard surfaces building-wide trends, live consumption, and practical recommendations, so day-to-day monitoring and longer-term decisions are supported from the same view.",
+      },
+    ],
+    visualLabels: [
+      "U Terrace — building performance dashboard",
+      "U Terrace — floor plan view",
+      "U Terrace — energy consumption trends",
+    ],
+    imageSrc: "/images/work/u-terrace/dashboard.jpg",
+  },
+  {
+    slug: "naplap",
+    projectNumber: "05",
+    client: "NapLap",
+    clientLegalName: "NapLap",
+    category: "Web application",
+    focus: "Co-working space energy management",
+    categories: ["web-platforms", "operational-tools"],
+    cardDescription:
+      "A web application for monitoring and controlling energy use across a co-working space.",
+    overview:
+      "NapLap is a web application built to help co-working space operators monitor and control energy use, from individual devices to overall electricity cost.",
+    opportunity: PLACEHOLDER_DETAILS,
+    role: PLACEHOLDER_DETAILS,
+    sections: [
+      {
+        heading: "Monitoring devices by floor",
+        body: "NapLap lays out devices on a floor plan with live status, so operators can see at a glance what's running, idle, or reserved without walking the space.",
+      },
+      {
+        heading: "Control and cost in one view",
+        body: "Alongside monitoring, NapLap surfaces device shortcuts and electricity cost together, so day-to-day control and budget tracking happen from the same dashboard.",
+      },
+    ],
+    visualLabels: [
+      "NapLap — monitor & control dashboard",
+      "NapLap — floor plan and device status",
+      "NapLap — energy cost overview",
+    ],
+    imageSrc: "/images/work/naplap/dashboard.jpg",
   },
 ];
 
