@@ -115,10 +115,18 @@ export default function AboutPage() {
           <div className="grid gap-16 lg:grid-cols-12 lg:gap-8">
             <div className="grid grid-cols-2 gap-4 lg:col-span-7 lg:gap-6">
               <Reveal delayMs={0} className="col-span-2 sm:col-span-1">
-                <EditorialPhotoPlaceholder aspectRatio="portrait" />
+                <EditorialPhotoPlaceholder
+                  aspectRatio="portrait"
+                  imageSrc="/images/about/team-01.png?v=workflow-20260730"
+                  alt="Two designers reviewing work together at a studio desk in front of a workflow whiteboard"
+                />
               </Reveal>
               <Reveal delayMs={100} className="col-span-2 mt-8 sm:col-span-1 sm:mt-16">
-                <EditorialPhotoPlaceholder aspectRatio="landscape" />
+                <EditorialPhotoPlaceholder
+                  aspectRatio="landscape"
+                  imageSrc="/images/about/team-02.png"
+                  alt="Wide view of the studio with the team working at their desks"
+                />
               </Reveal>
             </div>
             <Reveal delayMs={160} className="lg:col-span-5 lg:self-center">

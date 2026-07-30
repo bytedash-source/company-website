@@ -64,6 +64,7 @@ export const caseStudies: CaseStudy[] = [
       "IEA — key workflow",
       "IEA — responsive layout",
     ],
+    imageSrc: "/images/work/iea/dashboard.jpg",
   },
   {
     slug: "termfai",
@@ -95,6 +96,7 @@ export const caseStudies: CaseStudy[] = [
       "TERMFAI — shopping experience",
       "TERMFAI — key workflow",
     ],
+    imageSrc: "/images/work/termfai/dashboard.jpg",
   },
   {
     slug: "exat-linkedbiz",
@@ -125,6 +127,7 @@ export const caseStudies: CaseStudy[] = [
       "EXAT LinkedBiz — content management",
       "EXAT LinkedBiz — eCommerce experience",
     ],
+    imageSrc: "/images/work/exat-linkedbiz/dashboard.png",
   },
   {
     slug: "u-terrace",
