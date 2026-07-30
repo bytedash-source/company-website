@@ -90,16 +90,26 @@ export function CaseStudyContent({ project, nextProject }: CaseStudyContentProps
         </section>
       ))}
 
-      <section data-surface="dark" className="bg-graphite py-16 text-ivory sm:py-20">
-        <Container>
-          <SectionLabel>Project visuals</SectionLabel>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {project.visualLabels.map((label) => (
-              <CaseStudyVisual key={label} variant="desktop" label={label} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      {project.visualImageSrcs && project.visualImageSrcs.length > 0 ? (
+        <section data-surface="dark" className="bg-graphite py-16 text-ivory sm:py-20">
+          <Container>
+            <SectionLabel>Project visuals</SectionLabel>
+            <div className="mt-8 grid gap-6 sm:grid-cols-3">
+              {project.visualLabels.map((label, index) => (
+                <CaseStudyVisual
+                  key={label}
+                  variant={project.visualFrame ?? "desktop"}
+                  label={label}
+                  imageSrc={project.visualImageSrcs?.[index]}
+                  alt={project.visualImageSrcs?.[index] ? `${project.client} — ${label}` : ""}
+                  imageFit={project.visualImageFit}
+                  imageAspect={project.visualImageAspect}
+                />
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       <section data-surface="dark" className="border-t border-ivory/15 bg-graphite py-16 text-ivory sm:py-20">
         <Container>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const project = caseStudies.find((p) => p.slug === "naplap")!;
-const nextProject = caseStudies.find((p) => p.slug === "iea")!;
+const nextProject = caseStudies.find((p) => p.slug === "fund-platform-redesign")!;
 
 export default function NapLapCaseStudyPage() {
   return <CaseStudyContent project={project} nextProject={nextProject} />;

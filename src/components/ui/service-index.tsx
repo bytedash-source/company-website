@@ -10,14 +10,18 @@ export type ServiceIndexItem = {
   description: string;
 };
 
-type ServiceIndexRowProps = ServiceIndexItem;
+type ServiceIndexTone = "dark" | "light";
 
-function ServiceIndexRow({ index, title, description }: ServiceIndexRowProps) {
+type ServiceIndexRowProps = ServiceIndexItem & { tone: ServiceIndexTone };
+
+function ServiceIndexRow({ index, title, description, tone }: ServiceIndexRowProps) {
   const [open, setOpen] = useState(false);
   const panelId = `service-index-panel-${index}`;
+  const borderClass = tone === "light" ? "border-ink/15" : "border-ivory/15";
+  const descriptionClass = tone === "light" ? "text-ink/70" : "text-ivory/70";
 
   return (
-    <div className="border-b border-ivory/15 first:border-t">
+    <div className={`border-b first:border-t ${borderClass}`}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -37,7 +41,7 @@ function ServiceIndexRow({ index, title, description }: ServiceIndexRowProps) {
       </button>
       <div id={panelId} data-accordion-panel={open ? "open" : undefined}>
         <div>
-          <p className="max-w-xl pb-8 text-ivory/70">{description}</p>
+          <p className={`max-w-xl pb-8 ${descriptionClass}`}>{description}</p>
         </div>
       </div>
     </div>
@@ -49,12 +53,18 @@ function ServiceIndexRow({ index, title, description }: ServiceIndexRowProps) {
  * Used to preview a set of services (or any similarly-shaped list) without
  * repeating the accordion wiring at each call site.
  */
-export function ServiceIndex({ items }: { items: ServiceIndexItem[] }) {
+export function ServiceIndex({
+  items,
+  tone = "dark",
+}: {
+  items: ServiceIndexItem[];
+  tone?: ServiceIndexTone;
+}) {
   return (
     <div>
       {items.map((item, i) => (
         <Reveal key={item.index} delayMs={i * 60}>
-          <ServiceIndexRow index={item.index} title={item.title} description={item.description} />
+          <ServiceIndexRow index={item.index} title={item.title} description={item.description} tone={tone} />
         </Reveal>
       ))}
     </div>

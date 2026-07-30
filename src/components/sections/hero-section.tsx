@@ -19,8 +19,8 @@ export function HeroSection() {
         <EditorialPhotoPlaceholder
           aspectRatio="square"
           variant="graphite"
-          imageSrc="/images/hero/hero-visual.png"
-          alt="Abstract isometric diagram of a layered digital product system"
+          imageSrc="/images/editorial/home-product-workflow.jpg"
+          alt="Two product designers arranging wireframes and discussing a workflow on a whiteboard"
         />
       }
     />

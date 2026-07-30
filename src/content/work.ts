@@ -25,6 +25,14 @@ export type CaseStudy = {
   role: string;
   sections: CaseStudySection[];
   visualLabels: string[];
+  /** Optional per-item images for the project visuals gallery. */
+  visualImageSrcs?: string[];
+  /** Use `contain` when a UI capture must remain fully visible in its frame. */
+  visualImageFit?: "cover" | "contain";
+  /** Frame ratio for the project visuals gallery. */
+  visualImageAspect?: "video" | "ui";
+  /** Device frame for the project visuals gallery — defaults to "desktop". */
+  visualFrame?: "desktop" | "mobile" | "mockup" | "art";
   /** Real screenshot, used for the card preview and case-study hero — only
    * set once a review-ready capture exists. Falls back to the placeholder. */
   imageSrc?: string;
@@ -64,6 +72,13 @@ export const caseStudies: CaseStudy[] = [
       "IEA — key workflow",
       "IEA — responsive layout",
     ],
+    visualImageSrcs: [
+      "/images/work/iea/project-visuals/asset-management-ui.jpg",
+      "/images/work/iea/project-visuals/asset-detail-ui.jpg",
+      "/images/work/iea/project-visuals/user-management-ui.jpg",
+    ],
+    visualImageFit: "contain",
+    visualFrame: "mobile",
     imageSrc: "/images/work/iea/dashboard.jpg",
   },
   {
@@ -96,7 +111,8 @@ export const caseStudies: CaseStudy[] = [
       "TERMFAI — shopping experience",
       "TERMFAI — key workflow",
     ],
-    imageSrc: "/images/work/termfai/dashboard.jpg",
+    visualFrame: "mobile",
+    imageSrc: "/images/work/termfai/mockup.jpg?v=20260730-2",
   },
   {
     slug: "exat-linkedbiz",
@@ -154,10 +170,17 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     visualLabels: [
-      "U Terrace — building performance dashboard",
-      "U Terrace — floor plan view",
-      "U Terrace — energy consumption trends",
+      "U Terrace — floor plan overview",
+      "U Terrace — room information",
+      "U Terrace — report and billing",
     ],
+    visualImageSrcs: [
+      "/images/work/u-terrace/floor-plan-overview-sanitized.png",
+      "/images/work/u-terrace/room-info-sanitized.png",
+      "/images/work/u-terrace/report-billing-sanitized.png",
+    ],
+    visualImageFit: "contain",
+    visualImageAspect: "ui",
     imageSrc: "/images/work/u-terrace/dashboard.jpg",
   },
   {
@@ -190,6 +213,46 @@ export const caseStudies: CaseStudy[] = [
       "NapLap — energy cost overview",
     ],
     imageSrc: "/images/work/naplap/dashboard.jpg",
+  },
+  {
+    slug: "fund-platform-redesign",
+    projectNumber: "06",
+    client: "Fund Management Platform",
+    clientLegalName: "Confidential (asset management)",
+    category: "UX/UI research & redesign",
+    focus: "Fund investment platform",
+    categories: ["ux-ui-systems", "web-platforms"],
+    cardDescription:
+      "A UX research and redesign engagement for a fund investment platform, from heuristic evaluation to usability-tested prototypes.",
+    overview:
+      "This engagement covered UX research and redesign for a fund management platform — from competitive analysis and heuristic evaluation through to a redesigned information architecture and usability-tested prototypes. Client details are kept confidential at their request.",
+    opportunity:
+      "The existing site felt formal and information-dense, which created distance for newer, digital-native investors. The brand wanted to shift from feeling like a traditional financial institution to a more approachable, trustworthy guide for people building long-term wealth, without losing the credibility experienced investors expect.",
+    role:
+      "ByteDash led discovery and UX research — analytics review, competitive analysis against other fund platforms, and a heuristic evaluation of the existing site — then translated findings into a redesigned sitemap, an accessibility-focused design system (WCAG 2.1 AA), and high-fidelity prototypes. Four rounds of moderated usability testing with real investors, across experience levels from novice to expert, validated the direction before handoff.",
+    sections: [
+      {
+        heading: "Designing for clarity, not just information",
+        body: "The original site read as text-heavy and dense, making it hard to know what to focus on. The redesign grouped content by user intent, added clearer visual hierarchy, and gave every page room to breathe, so people could scan for what they needed instead of reading everything.",
+      },
+      {
+        heading: "Validating with real investors",
+        body: "Four usability testing scenarios, run with investors ranging from first-time to expert, covered core journeys including checking an existing holding, researching a new fund, and comparing two funds side by side. Every scenario reached a 97-100% task success rate, and the gaps that did surface, like confusing jargon and hard-to-find documents, fed directly into the final design.",
+      },
+    ],
+    visualLabels: [
+      "Moderated usability testing",
+      "Prototype review session",
+      "Research synthesis workshop",
+    ],
+    visualImageSrcs: [
+      "/images/work/fund-platform-redesign/usability-testing/testing-session-01.png",
+      "/images/work/fund-platform-redesign/usability-testing/testing-session-02.png",
+      "/images/work/fund-platform-redesign/usability-testing/testing-session-03.png",
+    ],
+    visualImageFit: "cover",
+    visualFrame: "art",
+    imageSrc: "/images/work/fund-platform-redesign/fund-platform-hero.png",
   },
 ];
 

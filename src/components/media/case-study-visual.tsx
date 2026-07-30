@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { MicroLabel } from "@/components/ui/micro-label";
 
-export type CaseStudyVariant = "desktop" | "mobile" | "full";
+export type CaseStudyVariant = "desktop" | "mobile" | "mockup" | "art" | "full";
 
 type CaseStudyVisualProps = {
   variant?: CaseStudyVariant;
@@ -9,6 +9,8 @@ type CaseStudyVisualProps = {
   imageSrc?: string;
   alt?: string;
   cropPosition?: string;
+  imageFit?: "cover" | "contain";
+  imageAspect?: "video" | "ui";
   className?: string;
 };
 
@@ -23,6 +25,8 @@ export function CaseStudyVisual({
   imageSrc,
   alt = "",
   cropPosition = "center",
+  imageFit = "cover",
+  imageAspect = "video",
   className = "",
 }: CaseStudyVisualProps) {
   const frameFill = (
@@ -33,7 +37,7 @@ export function CaseStudyVisual({
           alt={alt}
           fill
           style={{ objectPosition: cropPosition }}
-          className="object-cover"
+          className={imageFit === "contain" ? "object-contain" : "object-cover"}
         />
       ) : (
         <>
@@ -47,9 +51,27 @@ export function CaseStudyVisual({
   if (variant === "mobile") {
     return (
       <div className={`flex justify-center ${className}`}>
-        <div className="aspect-[9/19.5] w-full max-w-[220px] overflow-hidden rounded-[1.75rem] border-4 border-graphite-elevated bg-graphite shadow-[0_0_0_1px_rgba(238,233,223,0.12)]">
+        <div className="aspect-[9/16] w-full max-w-[220px] overflow-hidden rounded-[1.75rem] border-4 border-graphite-elevated bg-graphite shadow-[0_0_0_1px_rgba(238,233,223,0.12)]">
           {frameFill}
         </div>
+      </div>
+    );
+  }
+
+  // For art-directed device renders that already include the phone hardware,
+  // keep the original crop visible instead of wrapping it in a second device.
+  if (variant === "mockup") {
+    return (
+      <div className={`mx-auto aspect-[9/16] w-full max-w-[220px] overflow-hidden rounded-[1.75rem] border border-ivory/20 bg-graphite shadow-[0_0_0_1px_rgba(238,233,223,0.08)] ${className}`}>
+        {frameFill}
+      </div>
+    );
+  }
+
+  if (variant === "art") {
+    return (
+      <div className={`aspect-[7/5] overflow-hidden border border-ivory/15 bg-graphite-elevated ${className}`}>
+        {frameFill}
       </div>
     );
   }
@@ -62,7 +84,7 @@ export function CaseStudyVisual({
           <span className="h-2 w-2 rounded-full bg-ivory/20" />
           <span className="h-2 w-2 rounded-full bg-ivory/20" />
         </div>
-        <div className="aspect-video">{frameFill}</div>
+        <div className={imageAspect === "ui" ? "aspect-[7/5]" : "aspect-video"}>{frameFill}</div>
       </div>
     );
   }

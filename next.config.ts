@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         search: "?v=workflow-20260730",
       },
       {
+        pathname: "/images/work/termfai/mockup.jpg",
+        search: "?v=20260730-2",
+      },
+      {
         pathname: "/images/**",
         search: "",
       },

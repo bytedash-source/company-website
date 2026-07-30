@@ -5,7 +5,7 @@ import { SectionLabel } from "@/components/ui/section-label";
 import { CtaLink } from "@/components/ui/cta-link";
 import { MicroLabel } from "@/components/ui/micro-label";
 import { Reveal } from "@/components/ui/reveal";
-import { AbstractSystemVisual } from "@/components/media/abstract-system-visual";
+import { EditorialPhotoPlaceholder } from "@/components/media/editorial-photo-placeholder";
 import { ProjectCard } from "@/components/ui/project-card";
 import { PLACEHOLDER_OUTCOME, caseStudies } from "@/content/work";
 import {
@@ -36,7 +36,14 @@ export default function EnterprisePlatformsPage() {
         eyebrow={enterpriseHero.eyebrow}
         headline={enterpriseHero.headline}
         supporting={enterpriseHero.supporting}
-        visual={<AbstractSystemVisual label="SYS.02 — OPERATIONAL PLATFORM" />}
+        visual={
+          <EditorialPhotoPlaceholder
+            aspectRatio="square"
+            imageSrc="/images/enterprise/team-workflow.jpg"
+            alt="A product team discussing an operational workflow on a whiteboard"
+            className="border-0"
+          />
+        }
       />
 
       {/* 1. Complexity behind everyday operations */}
