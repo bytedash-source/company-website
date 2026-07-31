@@ -55,8 +55,10 @@ export const caseStudies: CaseStudy[] = [
       "A responsive web platform built to help manage assets more clearly.",
     overview:
       "IEA is a responsive web application built for Asset Activator Co., Ltd. to support asset management.",
-    opportunity: PLACEHOLDER_DETAILS,
-    role: PLACEHOLDER_DETAILS,
+    opportunity:
+      "Asset Activator Co., Ltd. had grown to the point where its own records couldn't keep up with it. Assets were tracked across scattered spreadsheets and disconnected files, so simple questions — what exists, where it is, what state it's in — took far longer to answer than they should have. The more the business grew, the more that gap slowed it down, until managing the data became almost as much work as managing the assets themselves. What the team needed wasn't another spreadsheet, but a proper system: one place to bring all of that information together and make it easy to work with, day to day.",
+    role:
+      "ByteDash took on the project end to end, responsible for both the UX/UI design and the full-stack build behind it. Rather than jumping straight to screens, the work began with research — sitting down with how the team actually managed assets in practice, not just how the process looked on paper. Those findings shaped the design: a clear structure for organising and finding assets, built around real workflows instead of assumptions. From there, the platform was built and tested as a working, responsive web application, so it held up in day-to-day use before it ever reached handoff.",
     sections: [
       {
         heading: "Designing for asset management",

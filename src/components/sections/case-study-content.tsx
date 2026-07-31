@@ -4,7 +4,7 @@ import { MicroLabel } from "@/components/ui/micro-label";
 import { SectionLabel } from "@/components/ui/section-label";
 import { Reveal } from "@/components/ui/reveal";
 import { CaseStudyVisual } from "@/components/media/case-study-visual";
-import { PLACEHOLDER_OUTCOME, type CaseStudy } from "@/content/work";
+import { PLACEHOLDER_DETAILS, PLACEHOLDER_OUTCOME, type CaseStudy } from "@/content/work";
 
 type CaseStudyContentProps = {
   project: CaseStudy;
@@ -52,20 +52,22 @@ export function CaseStudyContent({ project, nextProject }: CaseStudyContentProps
         </Container>
       </section>
 
-      <section data-surface="dark" className="bg-graphite text-ivory">
-        <Container>
-          <div className="grid gap-16 border-t border-ivory/15 py-16 sm:grid-cols-2 sm:py-20">
-            <Reveal>
-              <SectionLabel>The opportunity</SectionLabel>
-              <p className="mt-6 max-w-md text-ivory/70">{project.opportunity}</p>
-            </Reveal>
-            <Reveal delayMs={80}>
-              <SectionLabel>BYTE DASH&apos;s role</SectionLabel>
-              <p className="mt-6 max-w-md text-ivory/70">{project.role}</p>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
+      {project.opportunity !== PLACEHOLDER_DETAILS && project.role !== PLACEHOLDER_DETAILS ? (
+        <section data-surface="dark" className="bg-graphite text-ivory">
+          <Container>
+            <div className="grid gap-16 border-t border-ivory/15 py-16 sm:grid-cols-2 sm:py-20">
+              <Reveal>
+                <SectionLabel>The opportunity</SectionLabel>
+                <p className="mt-6 max-w-md text-ivory/70">{project.opportunity}</p>
+              </Reveal>
+              <Reveal delayMs={80}>
+                <SectionLabel>BYTE DASH&apos;s role</SectionLabel>
+                <p className="mt-6 max-w-md text-ivory/70">{project.role}</p>
+              </Reveal>
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       {project.sections.map((section, i) => (
         <section
