@@ -19,8 +19,8 @@ export function HeroSection() {
         <EditorialPhotoPlaceholder
           aspectRatio="square"
           variant="graphite"
-          imageSrc="/images/editorial/home-product-workflow.jpg"
-          alt="Two product designers arranging wireframes and discussing a workflow on a whiteboard"
+          imageSrc="/images/editorial/home-product-discovery-workshop.png"
+          alt="Three product designers arranging a user journey and paper prototypes together"
         />
       }
     />
