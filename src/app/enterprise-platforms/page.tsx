@@ -39,7 +39,7 @@ export default function EnterprisePlatformsPage() {
         visual={
           <EditorialPhotoPlaceholder
             aspectRatio="square"
-            imageSrc="/images/enterprise/team-workflow.jpg"
+            imageSrc="/images/enterprise/team-workflow-notes.png"
             alt="A product team discussing an operational workflow on a whiteboard"
             className="border-0"
           />

@@ -25,6 +25,14 @@ export default function AboutPage() {
         eyebrow="About"
         headline="Built for products that need to work in the real world."
         supporting="BYTE DASH is a digital product studio based in Bangkok and Nonthaburi, working across mobile, web, and UX/UI design."
+        visual={
+          <EditorialPhotoPlaceholder
+            aspectRatio="square"
+            variant="graphite"
+            imageSrc="/images/editorial/about-real-world-testing.png"
+            alt="A product designer observing a participant testing a mobile prototype and discussing a workflow"
+          />
+        }
       />
 
       {/* Who we are */}
@@ -93,19 +101,29 @@ export default function AboutPage() {
       {/* How we work */}
       <section data-surface="dark" className="bg-graphite-elevated py-24 text-ivory sm:py-32">
         <Container>
-          <Reveal className="max-w-2xl">
-            <SectionLabel>How we work</SectionLabel>
-            <p className="mt-6 text-lg text-ivory/70">
-              Projects at BYTE DASH move through five stages, discover,
-              define and design, build, test, and launch and improve,
-              adapted to the scope of the work. We stay involved past
-              launch, because most of what determines whether a product
-              succeeds happens after release, not before it.
-            </p>
-            <CtaLink href="/process" className="mt-8">
-              See our process
-            </CtaLink>
-          </Reveal>
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-8">
+            <Reveal className="max-w-2xl lg:col-span-5">
+              <SectionLabel>How we work</SectionLabel>
+              <p className="mt-6 text-lg text-ivory/70">
+                Projects at BYTE DASH move through five stages, discover,
+                define and design, build, test, and launch and improve,
+                adapted to the scope of the work. We stay involved past
+                launch, because most of what determines whether a product
+                succeeds happens after release, not before it.
+              </p>
+              <CtaLink href="/process" className="mt-8">
+                See our process
+              </CtaLink>
+            </Reveal>
+            <Reveal delayMs={100} className="lg:col-span-7">
+              <EditorialPhotoPlaceholder
+                aspectRatio="square"
+                variant="ivory"
+                imageSrc="/images/editorial/wireframe-workflow-sketches.png"
+                alt="A designer sketching a product workflow and early interface screens on paper"
+              />
+            </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -117,7 +135,7 @@ export default function AboutPage() {
               <Reveal delayMs={0} className="col-span-2 sm:col-span-1">
                 <EditorialPhotoPlaceholder
                   aspectRatio="portrait"
-                  imageSrc="/images/about/team-01.png?v=workflow-20260730"
+                  imageSrc="/images/about/team-01-workflow.png"
                   alt="Two designers reviewing work together at a studio desk in front of a workflow whiteboard"
                 />
               </Reveal>

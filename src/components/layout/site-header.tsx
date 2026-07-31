@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { CtaLink } from "@/components/ui/cta-link";
@@ -66,10 +67,11 @@ export function SiteHeader() {
       <Container className="flex h-20 items-center justify-between">
         <Link
           href="/"
-          className="font-mono text-sm tracking-[0.2em]"
+          className="flex items-center gap-2.5 font-mono text-sm tracking-[0.2em]"
           onClick={() => setOpen(false)}
         >
-          {siteInfo.name}
+          <Image src="/brand/byte-dash-mark-final.png" alt="" aria-hidden="true" width={24} height={24} unoptimized />
+          <span>{siteInfo.name}</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-10 md:flex">

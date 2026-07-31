@@ -16,6 +16,7 @@ type SplitHeroProps = {
   secondaryCta?: HeroCta;
   /** Optional visual slot (e.g. AbstractSystemVisual) — renders on a 12-col asymmetric split. */
   visual?: ReactNode;
+  tone?: "dark" | "light";
   className?: string;
 };
 
@@ -31,24 +32,31 @@ export function SplitHero({
   primaryCta,
   secondaryCta,
   visual,
+  tone = "dark",
   className = "",
 }: SplitHeroProps) {
+  const isLight = tone === "light";
+
   return (
     <section
-      data-surface="dark"
-      className={`bg-graphite pt-32 pb-20 text-ivory sm:pt-40 sm:pb-28 ${className}`}
+      data-surface={tone}
+      className={`${isLight ? "bg-ivory text-ink" : "bg-graphite text-ivory"} pt-32 pb-20 sm:pt-40 sm:pb-28 ${className}`}
     >
       <Container>
         <div className={visual ? "grid items-center gap-16 lg:grid-cols-12 lg:gap-8" : ""}>
           <div className={visual ? "lg:col-span-7" : "max-w-3xl"}>
-            <MicroLabel className="text-ivory/50">{eyebrow}</MicroLabel>
+            <MicroLabel className={isLight ? "text-ink/50" : "text-ivory/50"}>
+              {eyebrow}
+            </MicroLabel>
 
             <h1 className="mt-6 text-5xl leading-[1.08] font-medium sm:text-6xl lg:text-6xl xl:text-7xl">
               {headline}
             </h1>
 
             {supporting ? (
-              <p className="mt-8 max-w-lg text-lg text-ivory/70">{supporting}</p>
+              <p className={`mt-8 max-w-lg text-lg ${isLight ? "text-ink/70" : "text-ivory/70"}`}>
+                {supporting}
+              </p>
             ) : null}
 
             {primaryCta || secondaryCta ? (

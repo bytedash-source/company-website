@@ -5,6 +5,7 @@ import { SectionLabel } from "@/components/ui/section-label";
 import { CtaLink } from "@/components/ui/cta-link";
 import { MicroLabel } from "@/components/ui/micro-label";
 import { Reveal } from "@/components/ui/reveal";
+import { EditorialPhotoPlaceholder } from "@/components/media/editorial-photo-placeholder";
 import { services } from "@/content/services";
 
 export const metadata: Metadata = {
@@ -25,6 +26,15 @@ export default function ServicesPage() {
         eyebrow="Services"
         headline="Everything needed to take a product from idea to release."
         supporting="BYTE DASH works across mobile development, web development, UX/UI design, prototyping, and technology consulting. Projects can start at any point in that list, from an early idea that needs shaping, to an existing product that needs to be rebuilt or extended."
+        tone="light"
+        visual={
+          <EditorialPhotoPlaceholder
+            aspectRatio="square"
+            variant="ivory"
+            imageSrc="/images/editorial/services-product-journey-light.png"
+            alt="A progression of connected product modules evolving from transparent sketches to a finished digital platform"
+          />
+        }
       />
 
       <section data-surface="dark" className="bg-graphite text-ivory">

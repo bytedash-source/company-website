@@ -5,6 +5,7 @@ import { SectionLabel } from "@/components/ui/section-label";
 import { CtaLink } from "@/components/ui/cta-link";
 import { MicroLabel } from "@/components/ui/micro-label";
 import { Reveal } from "@/components/ui/reveal";
+import { EditorialPhotoPlaceholder } from "@/components/media/editorial-photo-placeholder";
 import { processAdaptabilityNote, processSteps } from "@/content/process";
 
 export const metadata: Metadata = {
@@ -25,6 +26,14 @@ export default function ProcessPage() {
         eyebrow="Process"
         headline="How a project moves from idea to release."
         supporting="Every project at BYTE DASH follows the same five stages. The depth of each stage depends on the size and maturity of the project — a new product idea moves through all five in full, while an existing platform might begin partway through."
+        visual={
+          <EditorialPhotoPlaceholder
+            aspectRatio="square"
+            variant="graphite"
+            imageSrc="/images/editorial/process-five-stages-ivory.png"
+            alt="Five connected product modules representing the journey from discovery to launch"
+          />
+        }
       />
 
       <section data-surface="dark" className="bg-graphite text-ivory">
